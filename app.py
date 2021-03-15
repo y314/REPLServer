@@ -7,8 +7,8 @@ import time
 app=Flask(__name__)
 basic={'yaniv':'hi'}
 #run server
-if __name__ == '__main__':
-    app.run(debug=True)
+#if __name__ == '__main__':
+app.run(debug=True)
 
 
 @app.route ("/", methods=['GET'])
