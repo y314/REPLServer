@@ -1,14 +1,19 @@
+from flask import Flask,request,json
 import os
-import sys
-import flask
 import time
 
-sys.path.insert(0, os.path.dirname(__file__))
+#init server
+app=Flask(__name__)
+basic={'yaniv':'hi'}
+#run server
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
-def application(environ, start_response):
-    start_response('200 OK', [('Content-Type', 'text/plain')])
-    message = 'Flask loading!\n'
-    version = 'Python %s\n' % sys.version.split()[0]
-    response = '\n'.join([message, version])
-    return [response.encode()]
+@app.route ("/", methods=['GET'])
+def index():
+    return json.dumps(basic)
+
+
+
+    
